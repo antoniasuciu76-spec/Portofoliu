@@ -1,49 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portofoliu</title>
-<style>
-    html, body {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofoliu</title>
+    <style>
+
+        html, body {
         margin: 0;
         padding: 0;
-        overflow-x: hidden; /* Ascunde orice conținut care depășește lățimea vizibilă */
-        background-color: #F2B303;
-        color-scheme: light;
-        color: #000; /* text negru, vizibil pe fundal */
-    }
-
-    /* Forțează light mode chiar dacă utilizatorul are dark mode */
-    @media (prefers-color-scheme: dark) {
-        html, body {
-            background-color: #F2B303 !important;
-            color: #000 !important;
+        overflow-x: hidden; /* Ascunde orice conținut care depășește lățimea vizibilă a ecranului. */
+        
+        }
+        :root {
+         color-scheme: light;
+        }
+        
+        .sectiune_portocalie{
+         background-color: #F2B303; 
+         width: 100vw;   
+         height: 100vh;
         }
 
-        .sectiune_portocalie {
-            background-color: #F2B303 !important;
+        .sectiune_gri{
+         background-color: #E7E7E7; 
+         width: 100vw;   
+         height: 100vh;
         }
-
-        .sectiune_gri {
-            background-color: #E7E7E7 !important;
-        }
-    }
-
-    .sectiune_portocalie{
-        width: 100vw;   
-        height: 100vh;
-    }
-
-    .sectiune_gri{
-        width: 100vw;   
-        height: 100vh;
-    }
-</style>
+    </style>
+   
 </head>
 <body>
 <div class="sectiune_portocalie"></div>
 <div class="sectiune_gri"></div>
+<div class="sectiune_portocalie"></div>
 <div class="sectiune_portocalie"></div>
 </body>
 </html>
