@@ -1,56 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portofoliu Light Mode</title>
-<style>
-  /* Forțează light mode absolut */
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #F2B303;
-    color: #000;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
+    <meta name="supported-color-schemes" content="light">
+    <title>Portofoliu</title>
+    <style>
 
-  /* Reset pentru toate elementele */
-  * {
-    background-color: unset;
-    color: unset;
-  }
+        :root {
+            color-scheme: light !important;
+            forced-color-adjust: none !important;
+            -webkit-forced-color-adjust: none !important;
+        }
 
-  .sectiune_portocalie {
-    background-color: #F2B303 !important;
-    width: 100vw;
-    height: 100vh;
-  }
+        html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Ascunde orice conținut care depășește lățimea vizibilă a ecranului. */
+        }
 
-  .sectiune_gri {
-    background-color: #E7E7E7 !important;
-    width: 100vw;
-    height: 100vh;
-  }
+        .sectiune_portocalie{
+         background-color: #F2B303!important;
+         width: 100vw;   
+         height: 100vh;
+        }
 
-  /* Pseudo-elemente, pentru WebView-uri */
-  *::before, *::after {
-    background-color: unset !important;
-    color: unset !important;
-  }
+        .sectiune_gri{
+         background-color: #E7E7E7!important; 
+         width: 100vw;   
+         height: 100vh;
+        }
 
-  /* Forțare absolută: orice dark mode va fi ignorat */
-  @media (prefers-color-scheme: dark) {
-    html, body, .sectiune_portocalie, .sectiune_gri, * {
-      background-color: inherit !important;
-      color: inherit !important;
-    }
-  }
-</style>
+        @media (prefers-color-scheme: dark) {
+            * {
+                background-color: inherit;
+                forced-color-adjust: none !important;
+                -webkit-forced-color-adjust: none !important;
+            }
+            html, body {
+                background-color: #ffffff !important;
+            }
+        }
+    </style>
+   
 </head>
 <body>
 <div class="sectiune_portocalie"></div>
 <div class="sectiune_gri"></div>
-<div class="sectiune_portocalie"></div>
 </body>
 </html>
