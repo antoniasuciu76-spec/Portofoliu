@@ -31,10 +31,22 @@
          width: 100vw;   
          height: 100vh;
         }
+
+        @media (prefers-color-scheme: dark) {
+            * {
+                background-color: inherit;
+                forced-color-adjust: none !important;
+                -webkit-forced-color-adjust: none !important;
+            }
+            html, body {
+                background-color: #ffffff !important;
+            }
+        }
     </style>
    
 </head>
 <body>
 <div class="sectiune_portocalie"></div>
+<div class="sectiune_gri"></div>
 </body>
 </html>
