@@ -1,47 +1,42 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portofoliu Light Mode</title>
-<style>
-  body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  #open-browser {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1em;
-    background: #F2B303;
-    color: #000;
-    font-weight: bold;
-    z-index: 9999;
-  }
-</style>
-<script>
-  // Detectează dacă ești în WebView
-  const isWebView = /FBAN|FBAV|WhatsApp/i.test(navigator.userAgent);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
+    <meta name="supported-color-schemes" content="light">
+    <title>Portofoliu</title>
+    <style>
 
-  window.addEventListener('DOMContentLoaded', () => {
-    if (isWebView) {
-      document.getElementById('open-browser').style.display = 'block';
-    }
-  });
-</script>
+        :root {
+            color-scheme: light !important;
+            forced-color-adjust: none !important;
+            -webkit-forced-color-adjust: none !important;
+        }
+
+        html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Ascunde orice conținut care depășește lățimea vizibilă a ecranului. */
+        }
+
+        .sectiune_portocalie{
+         background-color: #F2B303!important;
+         width: 100vw;   
+         height: 100vh;
+        }
+
+        .sectiune_gri{
+         background-color: #E7E7E7!important; 
+         width: 100vw;   
+         height: 100vh;
+        }
+        
+    </style>
+   
 </head>
 <body>
-<div id="open-browser">
-  Pentru o vizualizare corectă în light mode, deschide acest site într-un browser: 
-  <a href="https://exemplu.com" target="_blank" style="color:blue;">Apasă aici</a>
-</div>
-
-<h1>Bine ai venit!</h1>
-<p>Acest site funcționează corect doar în browser normal.</p>
+<div class="sectiune_portocalie"></div>
+<div class="sectiune_gri"></div>
 </body>
 </html>
