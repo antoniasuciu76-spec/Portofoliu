@@ -4,50 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light only">
-    <meta name="supported-color-schemes" content="light">
     <title>Portofoliu</title>
     <style>
+        /* 1. Blocăm ajustarea culorilor la nivel global */
+        :root {
+            color-scheme: light !important;
+            forced-color-adjust: none !important;
+        }
 
-img {
-  background-color: #ffffff; /* sau #F2B303, depinde de fundal */
-}
         html, body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden; /* Ascunde orice conținut care depășește lățimea vizibilă a ecranului. */
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #ffffff !important;
         }
 
-        h1{
-        color:#ff0000 !important;
+        /* 2. Trucul pentru Samsung Internet: */
+        /* Folosim un gradient cu un unghi minuscul (0.1deg). 
+           Samsung Internet nu știe să inverseze gradienții complecși, 
+           așa că îi lasă exact așa cum i-ai definit. */
 
-
+        .sectiune_portocalie {
+            background: linear-gradient(0.1deg, #F2B303, #F2B303) fixed !important;
+            width: 100vw;   
+            height: 100vh;
+            /* Întărim faptul că nu vrem inversare */
+            filter: none !important;
         }
 
-      .sectiune_portocalie {
-    background: linear-gradient(#ff0000, #ff0000) !important;
-    background-color: #F2B303 !important;
-    width: 100%;
-    height: 100vh;
-}
+        .sectiune_gri {
+            background: linear-gradient(0.1deg, #E7E7E7, #E7E7E7) fixed !important;
+            width: 100vw;   
+            height: 100vh;
+            filter: none !important;
+        }
 
-.sectiune_gri {
-    background: linear-gradient(#E7E7E7, #E7E7E7) !important;
-    background-color: #E7E7E7 !important;
-    width: 100%;
-    height: 100vh;
-}
+        /* 3. Prevenim inversarea culorilor pe Samsung folosind proprietatea de randare */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
 
+        /* 4. Suprascriem orice încercare de Dark Mode forțat */
+        @media (prefers-color-scheme: dark) {
+            .sectiune_portocalie, .sectiune_gri {
+                background-color: inherit !important;
+                filter: none !important;
+            }
+        }
     </style>
-   
 </head>
 <body>
-<div class="sectiune_portocalie"></div>
-<h1>Buna</h1>
-<img src="imagini/cerc_bun.png" alt="Cerc bun">
-
+    <div class="sectiune_portocalie"></div>
+    <div class="sectiune_gri"></div>
+    <div class="sectiune_portocalie"></div>
+    <div class="sectiune_portocalie"></div>
 </body>
-<script>
-    document.documentElement.setAttribute('data-theme', 'light');
-    document.documentElement.style.setProperty('color-scheme', 'light');
-</script>
 </html>
